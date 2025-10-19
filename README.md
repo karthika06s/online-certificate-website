@@ -9,6 +9,6 @@
 - Admin dashboard to manage users and certificates
 - Responsive design for all devices
 
-🌐 Live Demo: [Add link once hosted]  
+
 📂 Repository: [https://github.com/karthika06s/online-certificate-website](https://github.com/karthika06s/online-certificate-website)
 
