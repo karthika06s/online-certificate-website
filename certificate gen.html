@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Cinzel', serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .form-container {
+            width: 70%;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #d4af37;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto;
+        }
+        button:hover {
+            background-color: #c68f03;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <h1>Certificate Generator</h1>
+        <div class="form-group">
+            <label for="name">Recipient Name</label>
+            <input type="text" id="name" placeholder="Enter recipient name" required>
+        </div>
+        <div class="form-group">
+            <label for="event-details">Certificate Details</label>
+            <textarea id="event-details" rows="3" placeholder="Enter certificate details" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="organizer-name">Organizer Name</label>
+            <input type="text" id="organizer-name" placeholder="Enter organizer name" required>
+        </div>
+        <div class="form-group">
+            <label for="event-date">Event Date</label>
+            <input type="date" id="event-date" required>
+        </div>
+        <div class="form-group">
+            <label for="coordinator-name"> Coordinator </label>
+            <input type="text" id="coordinator-name" placeholder="Enter Club Coordinator name" required>
+        </div>
+        <div class="form-group">
+            <label for="dean-name">Dean </label>
+            <input type="text" id="dean-name" placeholder="Enter Dean name" required>
+        </div>
+        <div class="form-group">
+            <label for="hod-name">HOD </label>
+            <input type="text" id="hod-name" placeholder="Enter HOD or SDC Coordinator name" required>
+        </div>
+
+        <button onclick="continueToConfirm()">Continue</button>
+    </div>
+
+    <script>
+        function continueToConfirm() {
+            // Get input values
+            var name = document.getElementById('name').value;
+            var details = document.getElementById('event-details').value;
+            var organizer = document.getElementById('organizer-name').value;
+            var date = document.getElementById('event-date').value;
+            var coordinator = document.getElementById('coordinator-name').value;
+            var dean = document.getElementById('dean-name').value;
+            var hod = document.getElementById('hod-name').value;
+
+            // Validate if fields are filled
+            if (!name || !details || !organizer || !date || !coordinator || !dean || !hod) {
+                alert("Please fill all fields.");
+                return;
+            }
+
+            // Store values in localStorage
+            localStorage.setItem('name', name);
+            localStorage.setItem('details', details);
+            localStorage.setItem('organizer', organizer);
+            localStorage.setItem('date', date);
+            localStorage.setItem('coordinator', coordinator);
+            localStorage.setItem('dean', dean);
+            localStorage.setItem('hod', hod);
+
+            // Redirect to confirm page
+            window.location.href = 'confirm.html';
+        }
+    </script>
+</body>
+</html>

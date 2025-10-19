@@ -1,0 +1,19 @@
+.logo {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 120px; /* Reduced the size for a more balanced look */
+    width: 100%;      /* Ensures responsiveness */
+    height: auto;     /* Maintains the aspect ratio */
+}
+/* Add this CSS for positioning Dean and HOD */
+.dean-hod-container {
+    display: flex;
+    justify-content: center;  /* Center align the entire container */
+    align-items: flex-start;  /* Align items to the top */
+    margin-top: 20px;         /* Add space above the section */
+}
+
+.dean-hod-container .sign {
+    margin: 0 20px;           /* Add space between Dean and HOD */
+    text-align: center;
+}
